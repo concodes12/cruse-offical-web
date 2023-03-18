@@ -1,8 +1,0 @@
-@font-face {
-  font-family: 'Aku&Kamu';
-  src: url('Aku&Kamu.otf') format('truetype');
-}
-
-h1, p, span, div {
-  font-family: 'Aku&Kamu', sans-serif;
-}
