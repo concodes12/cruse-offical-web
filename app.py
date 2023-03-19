@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__, static_url_path="", static_folder="web")
 PROJECTS = [
@@ -11,7 +11,7 @@ PROJECTS = [
 
   {
     'id' : 2,
-    'name': 'school-shooter',
+    'name': 'School-Shooter',
     'type': 'unity video game project',
     'priorty':'Low'
   },
@@ -28,6 +28,10 @@ PROJECTS = [
 @app.route('/')
 def index():
     return render_template("index.html", jobs=PROJECTS, company_name='Jovian')
+  
+@app.route('/api/projects')
+def list_jobs():
+  return jsonify(PROJECTS)
 
 
 if __name__ == "__main__":
